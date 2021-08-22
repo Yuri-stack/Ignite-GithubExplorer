@@ -9,7 +9,12 @@ module.exports = {
         filename: 'bundle.js'                           // informa o nome do arquivo que será gerado
     },
     resolve: {                                          // informa quais arquivos podem ser lidos
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public')
+        },
     },
     plugins: [
         new HTMLWebpackPlugin({
