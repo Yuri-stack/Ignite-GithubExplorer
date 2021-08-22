@@ -1,4 +1,5 @@
-const path = require('path')    // forma de configurar caminhos independente do SO 
+const path = require('path')                            // forma de configurar caminhos independente do SO
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -10,7 +11,12 @@ module.exports = {
     resolve: {                                          // informa quais arquivos podem ser lidos
         extensions: ['.js', '.jsx']
     },
-    module: {   // como o app vai lidar quando importarmos cada tipo de arquivo
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'public', 'index.html')
+        })
+    ],
+    module: {                                           // como o app vai lidar quando importarmos cada tipo de arquivo
         rules: [
             {
                 test: /\.jsx$/,
