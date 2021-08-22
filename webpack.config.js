@@ -1,6 +1,7 @@
 const path = require('path')    // forma de configurar caminhos independente do SO 
 
 module.exports = {
+    mode: 'development',
     entry: path.resolve(__dirname, 'src', 'index.jsx'), // informa qual o arquivo principal
     output: {                                           // informa a saida do arquivo que será gerado
         path: path.resolve(__dirname, 'dist'),          // informa a pasta
