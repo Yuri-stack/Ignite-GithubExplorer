@@ -1,30 +1,20 @@
+import { RepositoryItem } from "./RepositoryItem";
+
+const repository = {
+    name: 'unform',
+    description: 'Descrição',
+    link: 'http://localhost:8080/'
+}
+
 export function RepositoryList(){
     return (
         <section className="repositoy-list">
             <h1>Lista de Repositórios</h1>
 
             <ul>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Descrição</p>
-                    <a href="">
-                        Acessar Repositório
-                    </a>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Descrição</p>
-                    <a href="">
-                        Acessar Repositório
-                    </a>
-                </li>
-                <li>
-                    <strong>Nome</strong>
-                    <p>Descrição</p>
-                    <a href="">
-                        Acessar Repositório
-                    </a>
-                </li>
+                <RepositoryItem repository={repository} />
+                <RepositoryItem repository={repository} />
+                <RepositoryItem repository={repository} />
             </ul>
         </section>
     )
