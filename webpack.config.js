@@ -7,13 +7,13 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 module.exports = {
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
-    entry: path.resolve(__dirname, 'src', 'index.jsx'), // informa qual o arquivo principal
+    entry: path.resolve(__dirname, 'src', 'index.tsx'), // informa qual o arquivo principal
     output: {                                           // informa a saida do arquivo que será gerado
         path: path.resolve(__dirname, 'dist'),          // informa a pasta
         filename: 'bundle.js'                           // informa o nome do arquivo que será gerado
     },
     resolve: {                                          // informa quais arquivos podem ser lidos
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     devServer: {
         static: {
@@ -30,7 +30,7 @@ module.exports = {
     module: {                       // como o app vai lidar quando importarmos cada tipo de arquivo
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use:{
                     loader: 'babel-loader',
